@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ka6Kft+cEKI=",
+  "success": true,
+  "projectFilePath": "/home/maksym/help/Programing-Ch.-2/Programing-Ch.-2.csproj",
+  "expectedPackageFiles": [
+    "/home/maksym/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.4/microsoft.aspnetcore.app.ref.9.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}
