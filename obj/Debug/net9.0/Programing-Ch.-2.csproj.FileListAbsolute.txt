@@ -1,0 +1,15 @@
+/home/maksym/help/Programing-Ch.-2/bin/Debug/net9.0/Programing-Ch.-2
+/home/maksym/help/Programing-Ch.-2/bin/Debug/net9.0/Programing-Ch.-2.deps.json
+/home/maksym/help/Programing-Ch.-2/bin/Debug/net9.0/Programing-Ch.-2.runtimeconfig.json
+/home/maksym/help/Programing-Ch.-2/bin/Debug/net9.0/Programing-Ch.-2.dll
+/home/maksym/help/Programing-Ch.-2/bin/Debug/net9.0/Programing-Ch.-2.pdb
+/home/maksym/help/Programing-Ch.-2/obj/Debug/net9.0/Programing-Ch.-2.GeneratedMSBuildEditorConfig.editorconfig
+/home/maksym/help/Programing-Ch.-2/obj/Debug/net9.0/Programing-Ch.-2.AssemblyInfoInputs.cache
+/home/maksym/help/Programing-Ch.-2/obj/Debug/net9.0/Programing-Ch.-2.AssemblyInfo.cs
+/home/maksym/help/Programing-Ch.-2/obj/Debug/net9.0/Programing-Ch.-2.csproj.CoreCompileInputs.cache
+/home/maksym/help/Programing-Ch.-2/obj/Debug/net9.0/Programing-Ch.-2.sourcelink.json
+/home/maksym/help/Programing-Ch.-2/obj/Debug/net9.0/Programing-Ch.-2.dll
+/home/maksym/help/Programing-Ch.-2/obj/Debug/net9.0/refint/Programing-Ch.-2.dll
+/home/maksym/help/Programing-Ch.-2/obj/Debug/net9.0/Programing-Ch.-2.pdb
+/home/maksym/help/Programing-Ch.-2/obj/Debug/net9.0/Programing-Ch.-2.genruntimeconfig.cache
+/home/maksym/help/Programing-Ch.-2/obj/Debug/net9.0/ref/Programing-Ch.-2.dll
