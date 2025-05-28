@@ -1,3 +1,5 @@
+namespace DBProject;
+
 public abstract class Entity
 {
   public int Id { get; }
