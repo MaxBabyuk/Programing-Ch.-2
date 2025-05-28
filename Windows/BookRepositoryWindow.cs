@@ -21,6 +21,8 @@ public partial class BookRepositoryWindow : Window, INotifyPropertyChanged
     public ObservableCollection<BookModel> Books { get; set; } = [];
 
     public ObservableCollection<BookModel> SortedBooks { get; set; } = [];
+    
+    public bool IsAdmin { get; set; }
 
     public BookModel[] SelectedBooks
     {
@@ -33,8 +35,9 @@ public partial class BookRepositoryWindow : Window, INotifyPropertyChanged
         }
     }
 
-    public BookRepositoryWindow(BookRepository repository, CategoryRepository categoryRepository)
+    public BookRepositoryWindow(BookRepository repository, CategoryRepository categoryRepository, bool admin)
     {
+        IsAdmin = admin;
         InitializeComponent();
         _repository = repository;
         _categoryRepository = categoryRepository;

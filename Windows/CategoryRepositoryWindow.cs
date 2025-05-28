@@ -31,9 +31,12 @@ public partial class CategoryRepositoryWindow : Window, INotifyPropertyChanged
             UpdateButtonStates();
         }
     }
+    
+    public bool IsAdmin { get; set; }
 
-    public CategoryRepositoryWindow(CategoryRepository repository)
+    public CategoryRepositoryWindow(CategoryRepository repository, bool admin)
     {
+        IsAdmin = admin;
         InitializeComponent();
         _repository = repository;
 

@@ -1,0 +1,18 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vma="clr-namespace:DBProject"
+        x:Class="DBProject.AuthWindow"
+        x:DataType="vma:AuthWindow"
+        Title="Authentication"
+        Width="800" Height="450">
+  <StackPanel>
+    <TextBlock Text="Username:"/>
+    <TextBox Text="{Binding Username, Mode=TwoWay}"/>
+    <TextBlock Text="Password:"/>
+    <TextBox Text="{Binding Password}" PasswordChar="*"/>
+    <TextBlock Text="Confirm Password:"/>
+    <TextBox Text="{Binding ConfirmPassword}" PasswordChar="*"/>
+    <Button x:Name="LoginButton" Content="Login" Click="LoginButton_Click"/>
+    <Button x:Name="RegisterButton" Content="Register" Click="RegisterButton_Click"/>
+  </StackPanel>
+</Window>

@@ -14,8 +14,8 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10" Margin="0,0,0,10">
-            <Button Content="Add Borrow" Click="AddBorrow_Click" />
-            <Button Content="Delete Borrow" Click="DeleteBorrow_Click" x:Name="DeleteButton" />
+            <Button IsEnabled="{Binding IsAdmin}" Content="Add Borrow" Click="AddBorrow_Click" />
+            <Button IsEnabled="{Binding IsAdmin}" Content="Delete Borrow" Click="DeleteBorrow_Click" x:Name="DeleteButton" />
             <Button Content="Back to Main" Click="BackToMain_Click" />
         </StackPanel>
 
@@ -25,7 +25,7 @@
                   SelectionChanged="BorrowGrid_SelectionChanged"
                   CellEditEnding="BorrowGrid_CellEditEnding"
                   ItemsSource="{Binding Borrows}"
-                  IsReadOnly="False">
+                  IsReadOnly="{Binding !IsAdmin}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" />
                 <DataGridTextColumn Header="User" Binding="{Binding User}" />

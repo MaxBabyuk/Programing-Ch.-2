@@ -33,9 +33,12 @@ public partial class BorrowRepositoryWindow : Window, INotifyPropertyChanged
             UpdateButtonStates();
         }
     }
+    
+    public bool IsAdmin { get; set; }
 
-    public BorrowRepositoryWindow(BorrowRepository repository, UserRepository userRepository, BookRepository bookRepository)
+    public BorrowRepositoryWindow(BorrowRepository repository, UserRepository userRepository, BookRepository bookRepository, bool admin)
     {
+        IsAdmin = admin;
         InitializeComponent();
         _repository = repository;
         _bookRepository = bookRepository;

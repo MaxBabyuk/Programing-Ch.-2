@@ -14,8 +14,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10" Margin="0,0,0,10">
-            <Button Content="Add User" Click="AddUser_Click" />
-            <Button Content="Delete User" Click="DeleteUser_Click" x:Name="DeleteButton" />
+            <Button IsEnabled="{Binding IsAdmin}" Content="Delete User" Click="DeleteUser_Click" x:Name="DeleteButton" />
             <Button Content="Sort by ID" Click="SortById_Click" />
             <Button Content="Sort by Login" Click="SortByLogin_Click" />
             <Button Content="Back to Main" Click="BackToMain_Click" />
@@ -27,11 +26,10 @@
                   SelectionChanged="UserGrid_SelectionChanged"
                   CellEditEnding="UserGrid_CellEditEnding"
                   ItemsSource="{Binding Users}"
-                  IsReadOnly="False">
+                  IsReadOnly="{Binding !IsAdmin}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" />
                 <DataGridTextColumn Header="Login" Binding="{Binding Login}" />
-                <DataGridTextColumn Header="Password" Binding="{Binding Password}" />
                 <DataGridTextColumn Header="Is Admin" Binding="{Binding IsAdmin}" />
             </DataGrid.Columns>
         </DataGrid>
@@ -45,7 +43,6 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Login" Binding="{Binding Login}" />
-                <DataGridTextColumn Header="Password" Binding="{Binding Password}" />
                 <DataGridCheckBoxColumn Header="Is Admin" Binding="{Binding IsAdmin}" />
             </DataGrid.Columns>
         </DataGrid>

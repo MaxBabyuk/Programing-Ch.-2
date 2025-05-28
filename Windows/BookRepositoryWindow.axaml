@@ -14,8 +14,8 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10" Margin="0,0,0,10">
-            <Button Content="Add Book" Click="AddBook_Click" />
-            <Button Content="Delete Book" Click="DeleteBook_Click" x:Name="DeleteButton" />
+            <Button Content="Add Book" Click="AddBook_Click" IsEnabled="{Binding IsAdmin}" />
+            <Button Content="Delete Book" Click="DeleteBook_Click" x:Name="DeleteButton" IsEnabled="{Binding IsAdmin}" />
             <Button Content="Sort by Title" Click="SortByTitle_Click" />
             <Button Content="Back to Main" Click="BackToMain_Click" />
         </StackPanel>
@@ -26,7 +26,7 @@
                   SelectionChanged="BookGrid_SelectionChanged"
                   CellEditEnding="BookGrid_CellEditEnding"
                   ItemsSource="{Binding Books}"
-                  IsReadOnly="False">
+                  IsReadOnly="{Binding !IsAdmin}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" />
                 <DataGridTextColumn Header="Title" Binding="{Binding Title}" />
