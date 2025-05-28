@@ -1,4 +1,6 @@
-class Category : Entity
+namespace DBProject;
+
+public class Category : Entity
 {
   public string Name { get; private set; }
   public Category(int id, string name) : base(id)

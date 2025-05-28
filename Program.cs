@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace Programing_Ch._2;
+namespace DBProject;
 
 class Program
 {

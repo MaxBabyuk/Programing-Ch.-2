@@ -1,4 +1,6 @@
-class User : Entity
+namespace DBProject;
+
+public class User : Entity
 {
   public string Login { get; private set; }
   public string Password { get; private set; }
@@ -12,7 +14,7 @@ class User : Entity
     IsAdmin = isAdmin;
   }
 
-  public override String Stringify()
+  public override string Stringify()
   {
     return $"User ({Id} {Login} {Password} {IsAdmin})";
   }

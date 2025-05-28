@@ -1,0 +1,53 @@
+
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vma="clr-namespace:DBProject"
+        x:Class="DBProject.UserRepositoryWindow"
+        x:DataType="vma:UserRepositoryWindow"
+        Title="User Repository"
+        Width="600" Height="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10" Margin="0,0,0,10">
+            <Button Content="Add User" Click="AddUser_Click" />
+            <Button Content="Delete User" Click="DeleteUser_Click" x:Name="DeleteButton" />
+            <Button Content="Sort by ID" Click="SortById_Click" />
+            <Button Content="Sort by Login" Click="SortByLogin_Click" />
+            <Button Content="Back to Main" Click="BackToMain_Click" />
+        </StackPanel>
+
+        <!-- Editable Grid -->
+        <DataGrid Grid.Row="1" x:Name="UserGrid"
+                  AutoGenerateColumns="False"
+                  SelectionChanged="UserGrid_SelectionChanged"
+                  CellEditEnding="UserGrid_CellEditEnding"
+                  ItemsSource="{Binding Users}"
+                  IsReadOnly="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Login" Binding="{Binding Login}" />
+                <DataGridTextColumn Header="Password" Binding="{Binding Password}" />
+                <DataGridTextColumn Header="Is Admin" Binding="{Binding IsAdmin}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Sorted Read-Only Grid -->
+        <DataGrid Grid.Row="2" x:Name="SortedGrid"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  CanUserSortColumns="False"
+                  ItemsSource="{Binding SortedUsers}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Login" Binding="{Binding Login}" />
+                <DataGridTextColumn Header="Password" Binding="{Binding Password}" />
+                <DataGridCheckBoxColumn Header="Is Admin" Binding="{Binding IsAdmin}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

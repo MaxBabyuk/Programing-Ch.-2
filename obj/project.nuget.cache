@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "WUBSTEgVja0=",
+  "dgSpecHash": "ndYi7sa1edc=",
   "success": true,
-  "projectFilePath": "/home/maksym/help/Programing-Ch.-2/Programing-Ch.-2.csproj",
+  "projectFilePath": "/home/maksym/help/Programing-Ch.-2/DBProject.csproj",
   "expectedPackageFiles": [
     "/home/maksym/.nuget/packages/avalonia/11.3.0/avalonia.11.3.0.nupkg.sha512",
     "/home/maksym/.nuget/packages/avalonia.angle.windows.natives/2.1.22045.20230930/avalonia.angle.windows.natives.2.1.22045.20230930.nupkg.sha512",
     "/home/maksym/.nuget/packages/avalonia.buildservices/0.0.31/avalonia.buildservices.0.0.31.nupkg.sha512",
     "/home/maksym/.nuget/packages/avalonia.controls.colorpicker/11.3.0/avalonia.controls.colorpicker.11.3.0.nupkg.sha512",
+    "/home/maksym/.nuget/packages/avalonia.controls.datagrid/11.0.0/avalonia.controls.datagrid.11.0.0.nupkg.sha512",
     "/home/maksym/.nuget/packages/avalonia.desktop/11.3.0/avalonia.desktop.11.3.0.nupkg.sha512",
     "/home/maksym/.nuget/packages/avalonia.diagnostics/11.3.0/avalonia.diagnostics.11.3.0.nupkg.sha512",
     "/home/maksym/.nuget/packages/avalonia.fonts.inter/11.3.0/avalonia.fonts.inter.11.3.0.nupkg.sha512",

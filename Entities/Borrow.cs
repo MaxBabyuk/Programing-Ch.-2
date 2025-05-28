@@ -1,4 +1,8 @@
-class Borrow : Entity
+using System;
+
+namespace DBProject;
+
+public class Borrow : Entity
 {
     public Book TargetBook { get; private set; }
   public User TargetUser { get; private set; }

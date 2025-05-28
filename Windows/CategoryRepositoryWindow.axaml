@@ -1,0 +1,48 @@
+
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vma="clr-namespace:DBProject"
+        x:Class="DBProject.CategoryRepositoryWindow"
+        x:DataType="vma:CategoryRepositoryWindow"
+        Title="Category Repository"
+        Width="600" Height="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10" Margin="0,0,0,10">
+            <Button Content="Add Category" Click="AddCategory_Click" />
+            <Button Content="Delete Category" Click="DeleteCategory_Click" x:Name="DeleteButton" />
+            <Button Content="Sort by Name" Click="SortByName_Click" />
+            <Button Content="Back to Main" Click="BackToMain_Click" />
+        </StackPanel>
+
+        <!-- Editable Grid -->
+        <DataGrid Grid.Row="1" x:Name="CategoryGrid"
+                  AutoGenerateColumns="False"
+                  SelectionChanged="CategoryGrid_SelectionChanged"
+                  CellEditEnding="CategoryGrid_CellEditEnding"
+                  ItemsSource="{Binding Categories}"
+                  IsReadOnly="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Sorted Read-Only Grid -->
+        <DataGrid Grid.Row="2" x:Name="SortedGrid"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  CanUserSortColumns="False"
+                  ItemsSource="{Binding SortedCategories}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

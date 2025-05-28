@@ -1,7 +1,17 @@
-class BookRepository : Repository<Book>
+using System.Collections.Generic;
+using System.Linq;
+
+namespace DBProject;
+
+public class BookRepository : Repository<Book>
 {
-  public List<Book> SortName()
+    public List<Book> SortName()
+    {
+        return ReadAll().OrderBy(book => book.Title).ToList();
+    }
+  
+  public Book? ReadByTitle(string title)
   {
-    return ReadAll().OrderBy(book => book.Title).ToList();
+    return ReadAll().FirstOrDefault(book => book.Title == title);
   }
 }

@@ -1,4 +1,4 @@
-abstract class Entity
+public abstract class Entity
 {
   public int Id { get; }
   
@@ -7,7 +7,7 @@ abstract class Entity
     Id = id;
   }
 
-  abstract public String Stringify();
+  abstract public string Stringify();
 
   public virtual bool IsSame(object obj)
   {
