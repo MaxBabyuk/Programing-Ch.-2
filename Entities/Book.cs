@@ -1,10 +1,12 @@
-class Book : Entity, IBorrowable
+namespace DBProject;
+
+public class Book : Entity, IBorrowable
 {
     public string Title { get; private set; }
     public Category BookCategory { get; private set; }
     public string Author { get; private set; }
     public Borrow? BookBorrow { get; private set; }
-
+    
     public bool IsBorrowed => BookBorrow != null;
 
     public Book(int id, string title, string author, Category category) : base(id)

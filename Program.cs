@@ -1,29 +1,21 @@
-﻿var userRepository = new UserRepository();
+﻿using Avalonia;
+using System;
 
-var categoryRepository = new CategoryRepository();
-var bookRepository = new BookRepository();
-var borrowRepository = new BorrowRepository();
-userRepository.Create(new User(1, "admin", "admin", true));
-userRepository.Create(new User(2, "user", "user", false));
+namespace DBProject;
 
-foreach (var user in userRepository.SortLogin())
+class Program
 {
-  Console.WriteLine(user.Stringify());
-}
+    // Initialization code. Don't use any Avalonia, third-party APIs or any
+    // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
+    // yet and stuff might break.
+    [STAThread]
+    public static void Main(string[] args) => BuildAvaloniaApp()
+        .StartWithClassicDesktopLifetime(args);
 
-userRepository.Delete(1);
-userRepository.Update(new User(1, "admin", "admin", true));
-userRepository.Create(new User(3, "user", "user", false));
-userRepository.Create(new User(4, "a_bit_admin", "P@$$w0rd", false));
-
-Console.WriteLine("After update:");
-foreach (var user in userRepository.SortId())
-{
-  Console.WriteLine(user.Stringify());
-}
-
-Console.WriteLine("Admins:");
-foreach (var user in userRepository.ListAdmins())
-{
-  Console.WriteLine(user.Stringify());
+    // Avalonia configuration, don't remove; also used by visual designer.
+    public static AppBuilder BuildAvaloniaApp()
+        => AppBuilder.Configure<App>()
+            .UsePlatformDetect()
+            .WithInterFont()
+            .LogToTrace();
 }

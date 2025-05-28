@@ -1,4 +1,9 @@
-class Repository<T> : IRepository<T> where T : Entity
+using System;
+using System.Collections.Generic;
+
+namespace DBProject;
+
+public class Repository<T> : IRepository<T> where T : Entity
 {
   private readonly List<T> _entities = new List<T>();
     public void Create(T entity)
@@ -13,7 +18,7 @@ class Repository<T> : IRepository<T> where T : Entity
 
     public void Update(T entity)
     {
-        _entities.RemoveAll(e => entity.Id == e.Id);
+        _entities.RemoveAll(e => e.Id == entity.Id);
         _entities.Add(entity);
     }
 

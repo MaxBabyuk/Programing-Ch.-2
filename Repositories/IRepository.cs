@@ -1,4 +1,6 @@
-interface IRepository<T>
+namespace DBProject;
+
+public interface IRepository<T>
 {
   void Create(T entity);
   T Read(int id);

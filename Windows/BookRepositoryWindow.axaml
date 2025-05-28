@@ -1,0 +1,52 @@
+
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vma="clr-namespace:DBProject"
+        x:Class="DBProject.BookRepositoryWindow"
+        x:DataType="vma:BookRepositoryWindow"
+        Title="Book Repository"
+        Width="600" Height="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10" Margin="0,0,0,10">
+            <Button Content="Add Book" Click="AddBook_Click" />
+            <Button Content="Delete Book" Click="DeleteBook_Click" x:Name="DeleteButton" />
+            <Button Content="Sort by Title" Click="SortByTitle_Click" />
+            <Button Content="Back to Main" Click="BackToMain_Click" />
+        </StackPanel>
+
+        <!-- Editable Grid -->
+        <DataGrid Grid.Row="1" x:Name="BookGrid"
+                  AutoGenerateColumns="False"
+                  SelectionChanged="BookGrid_SelectionChanged"
+                  CellEditEnding="BookGrid_CellEditEnding"
+                  ItemsSource="{Binding Books}"
+                  IsReadOnly="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Title" Binding="{Binding Title}" />
+                <DataGridTextColumn Header="Author" Binding="{Binding Author}" />
+                <DataGridTextColumn Header="Category" Binding="{Binding Category}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Sorted Read-Only Grid -->
+        <DataGrid Grid.Row="2" x:Name="SortedGrid"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  CanUserSortColumns="False"
+                  ItemsSource="{Binding SortedBooks}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Title" Binding="{Binding Title}" />
+                <DataGridTextColumn Header="Author" Binding="{Binding Author}" />
+                <DataGridTextColumn Header="Category" Binding="{Binding Category }" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

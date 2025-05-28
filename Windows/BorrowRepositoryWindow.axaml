@@ -1,0 +1,49 @@
+
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vma="clr-namespace:DBProject"
+        x:Class="DBProject.BorrowRepositoryWindow"
+        x:DataType="vma:BorrowRepositoryWindow"
+        Title="Borrow Repository"
+        Width="600" Height="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10" Margin="0,0,0,10">
+            <Button Content="Add Borrow" Click="AddBorrow_Click" />
+            <Button Content="Delete Borrow" Click="DeleteBorrow_Click" x:Name="DeleteButton" />
+            <Button Content="Back to Main" Click="BackToMain_Click" />
+        </StackPanel>
+
+        <!-- Editable Grid -->
+        <DataGrid Grid.Row="1" x:Name="BorrowGrid"
+                  AutoGenerateColumns="False"
+                  SelectionChanged="BorrowGrid_SelectionChanged"
+                  CellEditEnding="BorrowGrid_CellEditEnding"
+                  ItemsSource="{Binding Borrows}"
+                  IsReadOnly="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" />
+                <DataGridTextColumn Header="User" Binding="{Binding User}" />
+                <DataGridTextColumn Header="Book" Binding="{Binding Book}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Sorted Read-Only Grid -->
+        <DataGrid Grid.Row="2" x:Name="SortedGrid"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  CanUserSortColumns="False"
+                  ItemsSource="{Binding SortedBorrows}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="User" Binding="{Binding User}" />
+                <DataGridTextColumn Header="Book" Binding="{Binding Book}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
