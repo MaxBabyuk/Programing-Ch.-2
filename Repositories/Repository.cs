@@ -13,7 +13,7 @@ class Repository<T> : IRepository<T> where T : Entity
 
     public void Update(T entity)
     {
-        _entities.RemoveAll(entity => entity.Id == entity.Id);
+        _entities.RemoveAll(e => entity.Id == e.Id);
         _entities.Add(entity);
     }
 
